@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">myWritting</string>
+    <string name="app_name">Random Writes</string>
+    <string name="quote_widget_description">A widget to display random quotes</string>
+    <string name="quote_widget_large_description">A larger widget to display random quotes</string>
 </resources>
