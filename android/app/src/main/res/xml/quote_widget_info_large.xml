@@ -3,7 +3,6 @@
     android:initialLayout="@layout/quote_widget_large"
     android:minWidth="250dp"
     android:minHeight="180dp"
-    android:previewImage="@drawable/widget_preview_large"
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="1800000"
     android:widgetCategory="home_screen"
