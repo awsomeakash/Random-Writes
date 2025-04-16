@@ -5,6 +5,7 @@ import {
   ActivityIndicator,
   TouchableOpacity,
   StatusBar,
+  ScrollView,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {apiUrl} from './src/config';
@@ -61,7 +62,11 @@ const App = () => {
           </View>
         ) : (
           <>
-            <Text style={styles.quoteText}>{quote.text}</Text>
+            <ScrollView
+              contentContainerStyle={styles.scrollViewContent}
+              showsVerticalScrollIndicator={false}>
+              <Text style={styles.quoteText}>{quote.text}</Text>
+            </ScrollView>
             <Text style={styles.quoteId}>Quote #{quote.id}</Text>
           </>
         )}
@@ -80,78 +85,81 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#1e1e2e',
-    padding: 20,
+    padding: 16,
   },
   header: {
-    marginTop: 40,
-    marginBottom: 30,
+    marginTop: 20,
+    marginBottom: 16,
     alignItems: 'center',
   },
   headerText: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
     color: '#ffffff',
-    letterSpacing: 1,
+    letterSpacing: 0.5,
   },
   quoteContainer: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#2d2d42',
-    borderRadius: 16,
-    padding: 24,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 6,
-    elevation: 8,
-  },
-  quoteText: {
-    fontSize: 20,
-    lineHeight: 30,
-    color: '#ffffff',
-    textAlign: 'center',
-    fontStyle: 'italic',
-    fontFamily: 'serif',
-    marginBottom: 20,
-  },
-  quoteId: {
-    fontSize: 14,
-    color: '#6c72cb',
-    textAlign: 'right',
-    alignSelf: 'stretch',
-    marginTop: 10,
-  },
-  errorText: {
-    color: '#ff6b6b',
-    fontSize: 16,
-    textAlign: 'center',
-    marginBottom: 20,
-  },
-  refreshButton: {
-    backgroundColor: '#6c72cb',
-    paddingVertical: 14,
-    paddingHorizontal: 24,
-    borderRadius: 30,
-    alignItems: 'center',
-    marginTop: 30,
-    marginBottom: 20,
-    alignSelf: 'center',
+    borderRadius: 12,
+    padding: 16,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 4,
+  },
+  scrollViewContent: {
+    flexGrow: 1,
+    justifyContent: 'center',
+  },
+  quoteText: {
+    fontSize: 18,
+    lineHeight: 26,
+    color: '#ffffff',
+    textAlign: 'center',
+    fontStyle: 'italic',
+    fontFamily: 'serif',
+    marginBottom: 12,
+  },
+  quoteId: {
+    fontSize: 12,
+    color: '#6c72cb',
+    textAlign: 'right',
+    alignSelf: 'stretch',
+    marginTop: 8,
+  },
+  errorText: {
+    color: '#ff6b6b',
+    fontSize: 14,
+    textAlign: 'center',
+    marginBottom: 16,
+  },
+  refreshButton: {
+    backgroundColor: '#6c72cb',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 20,
+    alignItems: 'center',
+    marginTop: 20,
+    marginBottom: 16,
+    alignSelf: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 3,
   },
   refreshButtonText: {
     color: '#ffffff',
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontSize: 14,
+    fontWeight: '600',
   },
 });
