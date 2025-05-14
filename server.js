@@ -29,15 +29,21 @@ const TOOLS = [
             }
         },
     },
+    {
+        name: "addTwoNumbers",
+        description: "Adds two numbers together.",
+        parameters: {
+            a: { type: "number", description: "First number" },
+            b: { type: "number", description: "Second number" },
+        },
+        execute: ({ a, b }) => {
+            if (typeof a !== "number" || typeof b !== "number") {
+                return { error: "Both parameters must be numbers" };
+            }
+            return { result: a + b };
+        },
+    },
 ];
-
-function addTwoNumbers(a, b) {
-    const sum = a + b;
-    const total = sum;
-    return total;
-}
-
-addTwoNumbers();
 
 // Create an HTTP server to handle MCP requests
 const server = http.createServer((req, res) => {
